@@ -12,7 +12,7 @@ def shuffle_in_unison(a, b):
         shuffled_b[new_index] = b[old_index]
     return shuffled_a, shuffled_b
 
-
+'''
 a = numpy.asarray([[1, 1], [2, 2], [3, 3]])
 b = numpy.asarray([[1], [2], [3]])
 print(a)
@@ -58,4 +58,67 @@ for i, row in enumerate(X):
     temp = r
     X_ex.append(np.array(temp))
 print(X_ex)
-           
+'''
+
+
+
+def combinations(X, l):
+    temp = []
+    for i in range(len(X)):
+        t = []
+        if i == len(X)-l+1:
+            break
+        for j in np.arange(i,i+l):
+            t.append(X[j])
+        temp.append(t)
+    return np.array(temp) 
+
+x = [[0, 1, 0, 1, 0, 2, 0, 1]]
+def splitz(inp):
+    key = (0,)
+    return [list(q) for k, q in itertools.groupby(inp, lambda x:x in key) if not k]
+print(x)
+sub = np.array(splitz(x[0]))
+print(sub)
+X = x[0]
+y = []
+l=3
+
+for s in sub:
+    temp = combinations(X,len(s))
+    t = np.array(s)
+    for i, te in enumerate(temp):
+        if np.array_equal(t, te):
+            y.append(i)
+            if i == len(X)-l+1:
+                break
+            for p in np.arange(i, i+len(te)):
+                X[p] = 0
+
+print(y)
+
+
+'''
+for x in sub:
+    pred = model.predict(x)
+    if pred == 1:
+        # retrive from index
+    elif pred == 2
+        # retrive from index
+''' 
+'''
+import json
+
+data = {}
+data['isin'] = {'value':'isin_value',
+                'trade-date':'10/12/18'}
+json_data = json.dumps(data)
+
+print(json_data)
+'''
+import pytesseract
+from PIL import Image
+
+text = pytesseract.image_to_string(Image.open('imig.png'))
+
+print(text)
