@@ -1,0 +1,9 @@
+<unk>
+trade
+currency
+party
+date
+isin
+security
+code
+time

@@ -1,0 +1,6 @@
+trade date          =   1
+trade time          =   2
+isin security code  =   3
+isin                =   3
+security code       =   3
+code                =   3
